@@ -70,7 +70,7 @@ var updatePage = function () {
 }
 
 var pageClear = function () {
-  document.getElementById('rememberJoke').value = ''
+  document.getElementById('title').value = ''
   document.getElementById('setup').value = ''
   document.getElementById('punchline').value = ''
   document.getElementById('forgetJoke').value = ''
