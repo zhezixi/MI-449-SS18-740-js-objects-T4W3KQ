@@ -53,7 +53,7 @@ var jokeBox = document.getElementById('joke-box')
 var updateDisplayedJoke = function () {
   var requestedJokeKey = requestedJokeInput.value
   if (jokes[requestedJokeKey]) {
-    jokeBox.innerHTML = '<p>' + requestedJoke.setup + '</p>' + '<p>' + requestedJoke.punchline + '</p>'
+    jokeBox.innerHTML = '<p>' + jokes[requestedJokeKey].setup + '</p>' + '<p>' + jokes[requestedJokeKey].punchline + '</p>'
   } else {
     jokeBox.innerHTML = '<p>' + 'No matching joke found.' + '</p>'
   }
@@ -97,14 +97,14 @@ forgetButton.addEventListener('click', function () {
   var forgetJoke = document.getElementById('forgetJoke').value
   delete jokes[forgetJoke]
   setJokes()
-  windows.alert('Joke forgot!')
+  window.alert('Joke forgot!')
 })
 
 rememberButton.addEventListener('click', function () {
   var jokeTitle = document.getElementById('title').value
   var jokeSetup = document.getElementById('setup').value
   var jokePunchline = document.getElementById('punchline').value
-  jokes[rememberJoke] = {setup: jokeSetup, punchline: jokePunchline}
+  jokes[jokeTitle] = {setup: jokeSetup, punchline: jokePunchline}
   setJokes()
   window.alert('Joke set!')
 })
