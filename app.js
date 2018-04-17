@@ -23,14 +23,14 @@ var noJokesMessage = 'I... I don\'t know any jokes. 😢'
 
 var getJokes = function () {
   var jokeString = window.localStorage.getItem('jokes')
-  if (jokeString != null) {
+  if (jokeString !== null) {
     jokes = JSON.parse(jokeString)
   }
 }
 
 var setJokes = function () {
   var jokeString = JSON.stringify(jokes)
-  if (jokeString != null) {
+  if (jokeString !== null) {
     window.localStorage.setItem('jokes', jokeString)
   }
   updatePage()
@@ -63,9 +63,9 @@ var updateDisplayedJoke = function () {
 // page update functions, so that we
 // can call them all at once
 var updatePage = function () {
+  getJokes()
   updateJokesMenu()
   updateDisplayedJoke()
-  getJokes()
   pageClear()
 }
 
